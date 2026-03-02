@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUEMARINE Kazakhstan | Новая коллекция</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Bar KZ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="left">
+                <span class="flag">🇰🇿</span>
+                <span>Алматы • Бесплатная доставка от 20 000 ₸</span>
+            </div>
+            <div class="right">
+                <a href="#" class="login">Войти</a>
+                <span class="divider">|</span>
+                <a href="#" class="register">Регистрация</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span>BLUEMARINE</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#" data-category="women"><i class="fas fa-female"></i> Женское</a>
+                <a href="#" data-category="men"><i class="fas fa-male"></i> Мужское</a>
+                <a href="#">Детское</a>
+                <a href="#">BEAUTY</a>
+                <a href="#">SHOES</a>
+                <a href="#">Распродажа</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="🔍 Поиск">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="user-actions">
+                    <div class="favorites"><i class="far fa-heart"></i></div>
+                    <div class="cart" id="cart-trigger">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&fit=crop&w=1920&q=80" alt="Коллекция 1">
+            <div class="slide-content">
+                <h1>Новая коллекция</h1>
+                <p>Осень/Зима 2026</p>
+                <a href="#" class="shop-btn">Открыть</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&fit=crop&w=1920&q=80" alt="Коллекция 2">
+            <div class="slide-content">
+                <h1>Новинки недели</h1>
+                <p>Лучшее из новой поставки</p>
+            </div>
+        </div>
+        <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- Filters & Products -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="section-title">Новинки</h2>
+                <div class="filters">
+                    <select id="sort">
+                        <option>По новизне</option>
+                        <option>По цене (мин)</option>
+                        <option>По цене (макс)</option>
+                    </select>
+                    <div class="price-range">
+                        <input type="range" id="price-min" min="0" max="100000" value="0">
+                        <input type="range" id="price-max" min="0" max="100000" value="100000">
+                        <span id="price-display">0 - 100 000 ₸</span>
+                    </div>
+                </div>
+            </div>
+            <div class="products-grid" id="products-grid"></div>
+            <div class="load-more">Загрузить ещё</div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="modal hidden" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Корзина</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-footer">
+                <div class="total">Итого: <span id="cart-total">0 ₸</span></div>
+                <button class="checkout">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal hidden" id="quickview-modal">
+        <div class="modal-content product-detail">
+            <!-- Dynamic content -->
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal hidden" id="checkout-modal">
+        <div class="modal-content">
+            <form id="checkout-form">
+                <h3>Оформление заказа</h3>
+                <input type="text" placeholder="ФИО" required>
+                <input type="tel" placeholder="+7 (___) ___ __ __" required>
+                <input type="text" placeholder="Адрес доставки (Алматы)" required>
+                <div class="payment">
+                    <label><input type="radio" name="payment" value="card"> Карта</label>
+                    <label><input type="radio" name="payment" value="cash"> Наличные</label>
+                </div>
+                <button type="submit">Оплатить <span id="order-total">0 ₸</span></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
